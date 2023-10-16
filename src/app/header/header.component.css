@@ -1,0 +1,15 @@
+.linkClass{
+    color:rgb(10, 198, 245);
+font-size: larger;
+font-weight:500
+
+}
+.linkClass:hover{
+    
+    color: rgb(3, 93, 145);
+}
+.design{
+    height: 100px;
+    width: 100px;
+    padding-left: 0px;
+}

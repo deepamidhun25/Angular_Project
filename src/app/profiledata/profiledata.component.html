@@ -1,0 +1,29 @@
+<div *ngIf="datachild" class="card mb-4">
+    <div class="card-body">
+
+        <table class="table table-stripped table-info text-center">
+            <thead>
+              <tr class="table-info text-center">
+                <th scope="col">PickupDate</th>
+                <th scope="col">Delivery Date</th>
+                <th scope="col">Amount </th>
+                <th scope="col">Status</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-light text-center " *ngFor="let i of transaction" >
+                <td>{{i.orderDate}}</td>
+                <td>{{i.deliveryDate}}</td>
+                <td>{{i.amount}}</td>
+                <td>{{i.Status}}</td>
+
+
+              </tr>
+              
+            </tbody>
+          </table>
+
+    </div>
+</div>

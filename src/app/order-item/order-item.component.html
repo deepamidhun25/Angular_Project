@@ -1,0 +1,143 @@
+<div class="card   ">
+    <div class="card-header text-center  fs-4  fw-bolder" style="background-color: rgb(10, 198, 245);">Place your Order
+    </div>
+</div>
+<div class="card-body row ms-4 me-4">
+    <div class="col-4 text-center">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input fs-4" [(ngModel)]="check" name="checkbx1" type="checkbox"
+                id="inlineCheckbox1" value="option1">
+            <label class="form-check-label fs-5 fw-bolder mt-1" for="inlineCheckbox1">DRY CLEANING</label><br>
+            <p><i class="fa-solid fa-clock-rotate-left"></i> 3-5 days</p>
+            <p><i class="fa-solid fa-indian-rupee-sign"></i> 25/PC onwards</p>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input fs-4" [(ngModel)]="check2" name="ch2" type="checkbox" id="inlineCheckbox2"
+                value="option2">
+            <label class="form-check-label fs-5 fw-bolder mt-1" for="inlineCheckbox1">LAUNDRY WASH & FOLD</label><br>
+            <p><i class="fa-solid fa-clock-rotate-left"></i> 3-5 days</p>
+            <p><i class="fa-solid fa-indian-rupee-sign"></i> 79/KG onwards</p>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input fs-4" [(ngModel)]="check3" type="checkbox" name="ch3" id="inlineCheckbox3"
+                value="option3">
+            <label class="form-check-label fs-5 fw-bolder mt-1" for="inlineCheckbox1">LAUNDRY WASH & FOLD</label><br>
+            <p><i class="fa-solid fa-clock-rotate-left"></i> 3-5 days</p>
+            <p><i class="fa-solid fa-indian-rupee-sign"></i> 109/kg onwards</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div *ngIf="check" id="div1" name="div2">
+                <div class="input-group mb-3 ">
+                    <span class="input-group-text fs-5 fw-bolder" id="inputGroup-sizing-default">Numberof Pieces</span>
+                    <input id="input2" [(ngModel)]="drynumber" name="chek4" type="text"
+                        class="form-control fs-5 fw-bolder" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div *ngIf="check2" id="div2" name="div3">
+                <div class="input-group mb-3 ">
+                    <span class="input-group-text fs-5 fw-bolder" id="inputGroup-sizing-default">Quantity in KG</span>
+                    <input id="input3" [(ngModel)]="launNumber" name="chek4" type="text"
+                        class="form-control fs-5 fw-bolder" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div *ngIf="check3" id="div2" name="div3">
+                <div class="input-group mb-3 ">
+                    <span class="input-group-text fs-5 fw-bolder" id="inputGroup-sizing-default">Quantity in KG</span>
+                    <input id="input4" [(ngModel)]="laundryIronNumber" name="chek5" type="text"
+                        class="form-control fs-5 fw-bolder" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <br><br>
+    </div>
+    <div class=" ms-5 row">
+        <div class="col-6">
+            <label class="fs-5 fw-bolder" for="birthday">Shedule PickUp :</label>
+            <input class="fs-5 fw-bolder" [(ngModel)]="PickUpdate" type="date" id="date1" name="date1">
+        </div>
+
+        <div class="col-6">
+            <label class="fs-5 fw-bolder" for="birthday1"> Delivery Date Expected :</label>
+            <input class="fs-5 fw-bolder" [(ngModel)]="deliveryDate" value="{{deliveryDate}}" type=" " id="date2"
+                name="date2" disabled="">
+        </div>
+
+    </div>
+    <div><br><br></div>
+    <div class="row">
+        <div>
+            <button (click)="submit()"  type="button" class="btn btn-info text-center fs-4 mt-5 md-5 ms-5">Submit</button><br>
+            <div class="col-6">
+                <label class="fs-5 fw-bolder mt-5" for="birthday1"> Amount to be paid:</label>
+                <input class="fs-5 fw-bolder" [(ngModel)]="amount" value="{{amount}}" type=" " id="amnt1" name="amnt"
+                    disabled="">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button (click)="openModal()"  id="bt1" name="btt1" type="button" class="btn btn-info text-center fs-4 mt-5 md-5 ms-5">Make Payment</button><br>
+         <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        
+                            <div class="modal-body">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-2">Amount to Pay</h6>
+                    
+                                  </div>
+                                  <div class="col-md-9 pe-5">
+                    
+                                    <input type="text"value="{{amount}}"class="form-control form-control-lg" disabled />
+                    
+                                  </div>
+                                
+                                
+                        
+                            </div> 
+
+
+                              <div class="modal-footer">
+
+                                <button type="button" class="btn btn-secondary" routerLink="/profile" data-bs-dismiss="modal">Close</button>
+                                <button type="button" (click)="confirmOrder()" class="btn btn-info">Confirm payment</button>
+                              </div>
+                    
+
+
+
+                            
+                        <!-- <div class="modal-footer">
+                              <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+                            </div> -->
+               <!-- </div>
+                </div> -->
+    <!-- </div>
+    </div>
+
+
+</div> -->
+<div class="card   ">
+    <div class="card-header text-center fs-4 fw-bolder mt-5 " style="background-color: rgb(10, 198, 245);">Place your Order
+    </div>
+</div>

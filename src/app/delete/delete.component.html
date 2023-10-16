@@ -1,0 +1,13 @@
+<div *ngIf="deleteChild" class="card mb-4">
+    <div class="card-body">
+        <div>
+            <p>Are you Sure Want to DELETE your Account</p>
+
+        </div>
+        <div>
+            <button type="button" (click)="DeleteAccount()" class="btn btn-outline-info align-item-right me-5" >YES</button>
+            <button type="button" routerLink="/profile" class="btn btn-outline-success  align-item-right">NO</button>
+          
+        </div>
+    </div>
+</div>

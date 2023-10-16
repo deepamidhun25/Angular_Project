@@ -1,0 +1,55 @@
+<section class="vh-100 ">
+  <div class="container py-5 h-100 ">
+    <div class="row  d-flex align-items-center justify-content-center h-100  ">
+      <div class="col-md-8 col-lg-7 col-xl-6 ">
+        <img src="https://i.postimg.cc/rsqYq6Ww/product-500x500.webp"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
+        <form [formGroup]="loginform">
+          <!-- Email input -->
+
+          <h3 class="mb-5 text-center" style="color: rgb(10, 198, 245);">Login Page</h3>
+          <div class="form-outline mb-4">
+            <input type="email"formControlName="gmail" placeholder="Email address" id="form1Example13" class="form-control form-control-lg" />
+            <!-- <label class="form-label" for="form1Example13">Email address</label> -->
+          </div>
+          <div  *ngIf="(this.loginform.get('gmail')?.errors)&&(this.loginform.get('gmail')?.touched)">
+            <p class="text-danger">must enter valid Email Id</p>
+        </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" formControlName="psw" placeholder="Password" id="form1Example23" class="form-control form-control-lg" />
+            <!-- <label class="form-label" for="form1Example23">Password</label> -->
+          </div>
+          <div  *ngIf="(this.loginform.get('psw')?.errors)&&(this.loginform.get('psw')?.touched)">
+            <p class="text-danger">must contains numbers and letters only</p>
+        </div>
+
+          <!-- <div class="d-flex justify-content-around align-items-center mb-4"> -->
+            <!-- Checkbox -->
+            <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+              <label class="form-check-label" for="form1Example3"> Remember me </label>
+            </div>
+            <a href="#!">Forgot password?</a>
+          </div> -->
+          <!-- <div class="d-flex justify-content-around align-items-center mb-4"> -->
+
+          <!-- Submit button -->
+          <button type="submit" (click)=" login()" class="btn btn-info text-center">Sign in</button>
+
+         
+        <!-- </div> -->
+        <div class="text-center">
+          <p style="color: rgb(10, 198, 245);;">Not a member? <a class="linkbutton" routerLink="/register">Register</a></p>
+        </div>
+   
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

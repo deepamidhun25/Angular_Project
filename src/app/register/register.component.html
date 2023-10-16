@@ -1,0 +1,78 @@
+<section class="vh-100 bg-image"
+    style="background-image: url(); background-color:rgba(0, 0, 0, 0.397)">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form [formGroup]="registerform">
+
+                <div class="form-outline mb-4">
+                  <input type="text" formControlName="name" placeholder="Enter Name" id="form3Example1cg" class="form-control form-control-lg" />
+                  <!-- <label class="form-label" for="form3Example1cg">Your Name</label> -->
+                </div>
+                <div  *ngIf="(this.registerform.get('name')?.errors)&&(this.registerform.get('name')?.touched)">
+                  <p class="text-danger">must enter characters only</p>
+              </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" formControlName="gmail" placeholder="Enter Email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <!-- <label class="form-label" for="form3Example3cg">Your Email</label> -->
+                </div>
+                <div  *ngIf="(this.registerform.get('gmail')?.errors)&&(this.registerform.get('gmail')?.touched)">
+                  <p class="text-danger">must enter valid Email Id</p>
+              </div>
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="psw" placeholder="Password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <!-- <label class="form-label" for="form3Example4cg">Password</label> -->
+                </div>
+                <div  *ngIf="(this.registerform.get('psw')?.errors)&&(this.registerform.get('psw')?.touched)">
+                  <p class="text-danger">must contains numbers and letters only</p>
+              </div>
+
+                <!-- <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                </div> -->
+                <div class="form-outline mb-4">
+                    <input type="text" formControlName="address" placeholder="Enter address" id="form3Example1cg1" class="form-control form-control-lg" />
+                    <!-- <label class="form-label" for="form3Example1cg">Your Name</label> -->
+                  </div>
+                  <div  *ngIf="(this.registerform.get('address')?.errors)&&(this.registerform.get('address')?.touched)">
+                    <p class="text-danger">enter valid address</p>
+                </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="phoneNumber" placeholder="phone number" id="form3Example1cg2" class="form-control form-control-lg" />
+                    <!-- <label class="form-label" for="form3Example1cg">Your Name</label> -->
+                  </div>
+                  <div  *ngIf="(this.registerform.get('phoneNumber')?.errors)&&(this.registerform.get('phoneNumber')?.touched)">
+                    <p class="text-danger">enter valid phone numbers only</p>
+                </div>
+
+                <!-- <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div> -->
+
+                <div class="d-flex justify-content-center">
+                  <button type="button"
+                    class="btn btn-info btn-block btn-lg gradient-custom-4 text-body" (click)="register()">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a class="nav-link fw-bold text-body" routerLink="/login"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
